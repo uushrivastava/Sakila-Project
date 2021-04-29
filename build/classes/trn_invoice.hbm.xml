@@ -1,0 +1,61 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.highradius.training.struts.model.trn_invoice"
+		table="trn_invoice">
+
+		<meta attribute="class-description">
+			mapping of language table to language POJO
+		</meta>
+
+		<id name="pk_invoice_id" type="integer" column="pk_invoice_id">
+			<generator class="native" />
+		</id>
+
+		<property name="invoice_number" column="invoice_number" type="string" />
+
+		<property name="item_number" column="item_number" type="string" />
+
+		<property name="company_code" column="company_code" type="string" />
+		
+		<property name="fiscal_year" column="fiscal_year" type="string" />
+		
+		<property name="invoice_total_amount" column="invoice_total_amount" type="double" />
+		
+		<property name="invoice_due_amount" column="invoice_due_amount" type="double" />
+		
+		<property name="invoice_created_date" column="invoice_created_date" type="date" />
+		
+		<property name="due_date" column="due_date" type="date" />
+		
+		<property name="discount_1_percentage" column="discount_1_percentage" type="integer" />
+		
+		<property name="discount_2_percentage" column="discount_2_percentage" type="integer" />
+		
+		<property name="discount_3_percentage" column="discount_3_percentage" type="integer" />
+		
+		<property name="debit_credit_indicator" column="debit_credit_indicator" type="character" />
+
+	
+		
+		<many-to-one class="com.highradius.training.struts.model.trn_account" lazy="false" fetch="select"  name="account">
+			<column name="fk_account_id" not-null="true"></column>
+		</many-to-one>
+		
+		<many-to-one class="com.highradius.training.struts.model.trn_invoice_type" lazy="false" fetch="select"  name="invoice_type">
+			<column name="fk_invoice_type" not-null="true"></column>
+		</many-to-one>
+		
+		<many-to-one class="com.highradius.training.struts.model.trn_posting_key" lazy="false" fetch="select"  name="posting_key">
+			<column name="fk_posting_key" not-null="true"></column>
+		</many-to-one>
+			
+		<many-to-one class="com.highradius.training.struts.model.trn_customer" lazy="false" fetch="select"  name="customer">
+			<column name="fk_customer_id" not-null="true"></column>
+		</many-to-one>
+
+	</class>
+</hibernate-mapping>

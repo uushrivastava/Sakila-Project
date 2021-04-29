@@ -1,0 +1,27 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.highradius.training.struts.model.trn_posting_key"
+		table="trn_posting_key">
+
+		<meta attribute="class-description">
+			mapping of customer type
+		</meta>
+
+		<id name="pk_posting_key_id" type="integer" column="pk_posting_key_id">
+			<generator class="native" />
+		</id>
+
+		<property name="key_type" column="key_type" type="string" />
+
+		<property name="description" column="description" type="string" />
+		
+		<many-to-one class="com.highradius.training.struts.model.trn_account" lazy="false" fetch="select"  name="account">
+			<column name="fk_account_id" not-null="true"></column>
+		</many-to-one>
+
+	</class>
+</hibernate-mapping>

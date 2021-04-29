@@ -1,0 +1,39 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.highradius.training.struts.model.trn_customer"
+		table="trn_customer">
+
+		<meta attribute="class-description">
+			mapping of language table to language POJO
+		</meta>
+
+		<id name="pk_customer_map_id" type="integer" column="pk_customer_map_id">
+			<generator class="native" />
+		</id>
+
+		<property name="customer_number" column="customer_number" type="integer" />
+
+		<property name="customer_name" column="customer_name" type="string" />
+
+		<property name="company_code" column="company_code" type="integer" />
+
+	
+		
+		<many-to-one class="com.highradius.training.struts.model.trn_account" lazy="false" fetch="select"  name="account">
+			<column name="fk_account_id" not-null="true"></column>
+		</many-to-one>
+		
+		<many-to-one class="com.highradius.training.struts.model.trn_customer_type" lazy="false" fetch="select"  name="customer_type">
+			<column name="fk_customer_type_id" not-null="true"></column>
+		</many-to-one>
+		
+		<many-to-one class="com.highradius.training.struts.model.trn_address" lazy="false" fetch="select"  name="address">
+			<column name="fk_address_id" not-null="true"></column>
+		</many-to-one>
+
+	</class>
+</hibernate-mapping>

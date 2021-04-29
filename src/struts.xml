@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+   "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package name="default" extends="json-default">
+		<action name="getDataServletJDBC" class="com.highradius.training.struts.action.Action"  method="getData">
+			<result name = "Success" type = "json">
+				<param name = "root">result</param>
+			</result>
+		</action>
+		<action name="getLanguage" class="com.highradius.training.struts.action.Action"  method="getLanguage">
+			<result name = "Success" type = "json">
+				<param name = "root">result</param>
+			</result>
+		</action>
+		<action name="AddForm" class="com.highradius.training.struts.action.Action"  method="addMovie">
+			<result name = "Success" type = "json">
+				<param name = "root">succ</param>
+			</result>
+		</action>
+		<action name="EditForm" class="com.highradius.training.struts.action.Action"  method="editMovie">
+			<result name = "Success" type = "json">
+				<param name = "root">succ</param>
+			</result>
+		</action>
+		<action name="DeleteForm" class="com.highradius.training.struts.action.Action"  method="deleteMovie">
+			<result name = "Success" type = "json">
+				<param name = "root">succ</param>
+			</result>
+		</action>	
+		<action name="SoftDeleteForm" class="com.highradius.training.struts.action.Action"  method="softDelete">
+			<result name = "Success" type = "json">
+				<param name = "root">succ</param>
+			</result>
+		</action>		
+		<action name="GetRating" class="com.highradius.training.struts.action.Action"  method="getMovieRating">
+			<result name = "Success" type = "json">
+				<param name = "root">result</param>
+			</result>
+		</action>
+		<action name="GetSpecial" class="com.highradius.training.struts.action.Action"  method="getSpecial">
+			<result name = "Success" type = "json">
+				<param name = "root">result</param>
+			</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,24 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.highradius.training.struts.model.trn_account" table="trn_account">
+
+		<meta attribute="class-description">
+			mapping of account table of trn_account table
+		</meta>
+
+		<id name="account_id" 
+            type="integer"
+            column="account_id">
+			<generator class="native" />
+		</id>
+
+		<property name="account_name" 
+            column="account_name" 
+            type="string" />
+		
+	</class>
+</hibernate-mapping>
